@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import NavigationMenu from './NavigationMenu';
+import Footer from './Footer';
 const Layout = () => {
   return (
     <div>
@@ -8,6 +9,7 @@ const Layout = () => {
         {/* Render child routes here */}
         <Outlet /> {/* Outlet options: */}
       </main>
+      <Footer/>
     </div>
   );
 };

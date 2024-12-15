@@ -10,14 +10,9 @@ function App() {
 
   return (
     <>
-      {/* Navigation Menu - visible on all routes */}
 
       {/* Dynamic routing using RouterProvider */}
       <RouterProvider router={router} />
-
-      
-      {/* Static Footer */}
-      <Footer />
     </>
   );
 }
