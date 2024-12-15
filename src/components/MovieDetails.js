@@ -3,13 +3,13 @@ import {useLocation} from 'react-router-dom';
 const MovieDetails = () => {
   const location = useLocation();
 
-console.log("location state: ",location.state)
+
   if(!location.state){
     return <h1> No State Available</h1>
   }
   return (
     <div>
-  <h1 class="text-4xl">{location.state.title} </h1>
+  <h1 class="text-4xl">{location.state.title} {location.state.likeCount}</h1>
   <p>{location.state.description} </p>
   <img
         class='w-full'

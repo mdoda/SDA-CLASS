@@ -10,7 +10,8 @@ const MoviesList = () => {
   // const [loading, setLoading] = useState(true); // Track loading state
   // const [error, setError] = useState(null); // Track error state
 
-  useEffect(() => {
+  useEffect(
+    () => {
     const fetchMovies = async () => {
       axios
         .get('http://localhost:3001/movies')
@@ -21,53 +22,23 @@ const MoviesList = () => {
     fetchMovies();
   }, []);
 
+
   return (
     <>
-    <NavigationMenu />
-    <div className='p-4'>
-      
-      <Header title='Movies List' subtitle='Dashboard All Movies' />
+      <div>
+        <Header title='Movies List' subtitle='Dashboard All Movies' />
 
-      <div className='flex gap-4 mb-4 overflow-x-auto'>
-        {movies?.map((movie) => {
-          console.log(movie);
-          return (
-            <div class='flex-none'>
-              <MovieCard movieProps={movie} />
-            </div>
-          );
-        })}
+        <div className='flex gap-4 mb-4 overflow-x-auto h-full p-4'>
+          {movies?.map((movie) => {
+            console.log(movie);
+            return (
+              <div class='flex-none'>
+                <MovieCard movieProps={movie} />
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div className='flex gap-4 overflow-x-auto'>
-        {movies?.map((movie) => {
-          return (
-            <div class='flex-none'>
-              <MovieCard movieProps={movie} />
-            </div>
-          );
-        })}
-      </div>
-
-      <div className='flex gap-4 overflow-x-auto'>
-        {movies?.map((movie) => {
-          return (
-            <div class='flex-none'>
-              <MovieCard movieProps={movie} />
-            </div>
-          );
-        })}
-      </div>
-
-      <div className='flex flex-wrap gap-4 w-full'>
-        {movies?.map((movie) => {
-          return (
-            <div key={movie.id}>
-              <MovieCard movieProps={movie} />
-            </div>
-          );
-        })}
-      </div>
-    </div>
     </>
   );
 };

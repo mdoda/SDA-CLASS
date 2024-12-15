@@ -1,7 +1,7 @@
 import './App.css';
 import { RouterProvider } from 'react-router-dom'; // Import RouterProvider
 import { createRouter } from './routes/router'; // Import your createRouter function
-
+import NavigationMenu from './components/NavigationMenu'; // Import NavigationMenu
 import Footer from './components/Footer';
 
 function App() {
@@ -10,9 +10,12 @@ function App() {
 
   return (
     <>
+      {/* Navigation Menu - visible on all routes */}
+
       {/* Dynamic routing using RouterProvider */}
-      <RouterProvider router={router}/>
-  
+      <RouterProvider router={router} />
+
+      
       {/* Static Footer */}
       <Footer />
     </>
