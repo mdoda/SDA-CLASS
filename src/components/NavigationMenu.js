@@ -1,7 +1,10 @@
 import logo from '../images/thor.jpg';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useFavoritesStore } from '../store/favoriteMovies';
+
 const NavigationMenu = () => {
+  const favoriteCount = useFavoritesStore((state) => state.favoriteCount);
   return (
     <nav class='bg-gray-800'>
       <div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
@@ -51,9 +54,7 @@ const NavigationMenu = () => {
             </div>
             <div class='hidden sm:ml-6 sm:block'>
               <div class='flex space-x-4'>
-              <Link
-                  to='/'
-                  class='rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white'
+              <Link to='/' class='rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white'
                 >
                   Home
                 </Link>
@@ -64,7 +65,7 @@ const NavigationMenu = () => {
                   About Us
                 </Link>
 
-                <Link to='/projects' class='rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' >Projects</Link>
+                <Link to='/favorite-list' class='rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' >Favorite ({favoriteCount})</Link>
                <Link to='/contact' class='rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' >Contact</Link>
               </div>
             </div>
@@ -81,7 +82,7 @@ const NavigationMenu = () => {
             Dashboard
           </a>
           <Link to='/about'>About Us</Link>
-          <Link to='/projects'>Projects</Link>
+          <Link to='/projects'>Favorite</Link>
           <a
             href='#'
             class='block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white'

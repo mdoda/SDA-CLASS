@@ -1,8 +1,10 @@
 const Header = (props) => {
     return (
         <div>
-            <h1>{props.title}</h1>
-            <h4>{props.subtitle}</h4>
+            <div className="flex justify-center text-4xl font-bold">
+                {props.title}
+                </div>
+            <div className='flex justify-center'>{props.subtitle}</div>
         </div>
     );
 }

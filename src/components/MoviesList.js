@@ -26,14 +26,14 @@ const MoviesList = () => {
   return (
     <>
       <div>
-        <Header title='Movies List' subtitle='Dashboard All Movies' />
+        <Header title='Home Page' subtitle='All Movies' />
 
         <div className='flex gap-4 mb-4 overflow-x-auto h-full p-4'>
-          {movies?.map((movie) => {
+          {movies?.map((movie, index) => {
             console.log(movie);
             return (
-              <div class='flex-none'>
-                <MovieCard movieProps={movie} />
+              <div class='flex-none' key={movie.id}>
+                <MovieCard movieProps={movie}  key={movie.id}/>
               </div>
             );
           })}
